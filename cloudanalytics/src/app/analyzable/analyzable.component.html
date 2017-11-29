@@ -1,0 +1,48 @@
+<div class="card bg-light">
+<div style="width: 300px;" class="text-center">
+<img id="preview" style="width: 100%;" src="{{analyzable.url}}"/>
+</div>
+  <div class="card-body">
+    <h4 class="card-title">Image Analyzer</h4>
+    <p class="card-text">Cloud Computing WS17/18</p>
+    
+	<div class="row">
+		<div class="col-md-2">
+	      <label>Image Source:</label>
+		</div>
+		<div class="col-md-6">
+	      <input style="width: 100%;" [(ngModel)]="analyzable.url" placeholder="https://angular.io/assets/images/logos/angular/angular.png">
+		</div>
+	</div>
+    
+	<div class="row">
+		<div class="col-md-2">
+	      <label>Analyzer:</label>
+		</div>
+		<div class="col-md-9">
+	    <select style="width: 150px;" [(ngModel)]="selectedAnalyzer">
+	    	<option *ngFor="let a of analyzers">{{a}}</option>
+		</select>
+		</div>
+	</div>
+    
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-9">
+	    <button style="width: 150px" class="btn btn-primary" (click)="analyze()">Analyze</button>
+		</div>
+	</div>
+	
+	
+	<div style="margin-top:15px;">
+			<h3> {{ characteristic.caption }}</h3>
+
+		<ul>
+			<li class="btn btn-warning" style="margin-left: 10px; margin-top: 10px;" *ngFor="let c of characteristic.tags">
+				{{ c }}
+			</li>
+		</ul>
+	</div>
+  </div>
+</div>
